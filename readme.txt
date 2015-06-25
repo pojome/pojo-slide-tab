@@ -32,5 +32,5 @@ License: GPLv2 or later
 
 == Changelog ==
 
-= 1.1.0 =
+= 1.0.0 =
 * Initial Public Release!
