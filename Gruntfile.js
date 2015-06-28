@@ -107,6 +107,17 @@ module.exports = function( grunt ) {
 			}
 		},
 
+		less: {
+			dist: {
+				options: {
+					cleancss: true
+				},
+				files: {
+					'assets/css/style.css': 'assets/less/style.less'
+				}
+			}
+		},
+
 		watch: {
 			js: {
 				files: [
@@ -144,17 +155,6 @@ module.exports = function( grunt ) {
 						'assets/css/style.css',
 						'assets/js/app.min.js'
 					]
-				}
-			}
-		},
-
-		less: {
-			dist: {
-				options: {
-					cleancss: true
-				},
-				files: {
-					'assets/css/style.css': 'assets/less/style.less'
 				}
 			}
 		},
