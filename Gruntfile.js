@@ -1,5 +1,5 @@
 /**
- * Pojo Sliding Tab Makefile
+ * Pojo Slide Tab Makefile
  */
 'use strict';
 
@@ -14,7 +14,7 @@ module.exports = function( grunt ) {
 		checktextdomain: {
 			standard: {
 				options:{
-					text_domain: 'pojo-sliding-tab',
+					text_domain: 'pojo-slide-tab',
 					correct_domain: true,
 					keywords: [
 						// WordPress keywords
@@ -50,7 +50,7 @@ module.exports = function( grunt ) {
 
 		pot: {
 			options:{
-				text_domain: 'pojo-sliding-tab',
+				text_domain: 'pojo-slide-tab',
 				dest: 'languages/',
 				keywords: [
 					// WordPress keywords
@@ -83,10 +83,86 @@ module.exports = function( grunt ) {
 			}
 		},
 
+		jshint: {
+			options: {
+				jshintrc: '.jshintrc'
+			},
+			all: [
+				'Gruntfile.js',
+				'assets/js/dev/app.dev.js',
+				'assets/js/dev/jquery.pojo-slide-tab.js'
+			]
+		},
+
+		uglify: {
+			pkg: grunt.file.readJSON( 'package.json' ),
+			options: {},
+			dist: {
+				files: {
+					'assets/js/app.min.js': [
+						'assets/js/dev/jquery.pojo-slide-tab.js',
+						'assets/js/dev/app.dev.js'
+					]
+				}
+			}
+		},
+
+		watch: {
+			js: {
+				files: [
+					'**/*.js',
+					'!**/*.min.js'
+				],
+				tasks: [
+					'jshint',
+					'uglify',
+					'usebanner'
+				],
+				options: {}
+			},
+
+			less: {
+
+				files: [
+					'**/*.less'
+				],
+				tasks: [
+					'less'
+				],
+				options: {}
+			}
+		},
+
+		usebanner: {
+			dist: {
+				options: {
+					banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+					'<%= grunt.template.today("dd-mm-yyyy") %> */'
+				},
+				files: {
+					src: [
+						'assets/css/style.css',
+						'assets/js/app.min.js'
+					]
+				}
+			}
+		},
+
+		less: {
+			dist: {
+				options: {
+					cleancss: true
+				},
+				files: {
+					'assets/css/style.css': 'assets/less/style.less'
+				}
+			}
+		},
+
 		wp_readme_to_markdown: {
 			github: {
 				options: {
-					gruntDependencyStatusUrl: 'https://david-dm.org/pojome/pojo-sliding-tab'
+					gruntDependencyStatusUrl: 'https://david-dm.org/pojome/pojo-slide-tab'
 				},
 				files: {
 					'README.md': 'readme.txt'
@@ -105,7 +181,7 @@ module.exports = function( grunt ) {
 
 		replace: {
 			plugin_main: {
-				src: [ 'pojo-sliding-tab.php' ],
+				src: [ 'pojo-slide-tab.php' ],
 				overwrite: true,
 				replacements: [
 					{
@@ -195,6 +271,10 @@ module.exports = function( grunt ) {
 	grunt.registerTask( 'default', [
 		'checktextdomain',
 		'pot',
+		'less',
+		'jshint',
+		'uglify',
+		'usebanner',
 		'wp_readme_to_markdown'
 	] );
 

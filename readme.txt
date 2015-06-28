@@ -1,4 +1,4 @@
-=== Pojo Sliding Tab ===
+=== Pojo Slide Tab ===
 Contributors: pojo.me, KingYes, ariel.k
 Tags: Import, Importer,
 Requires at least: 4.1

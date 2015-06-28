@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: pojo-sliding-tab 1.0.0\n"
+"Project-Id-Version: pojo-slide-tab 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-25 18:46+0300\n"
+"POT-Creation-Date: 2015-06-28 16:24+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,21 +17,21 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: includes/class-pojo-sliding-tab-settings.php:10
-msgid "Sliding Tab"
+#: includes/class-pojo-slide-tab-settings.php:10
+msgid "Slide Tab"
 msgstr ""
 
-#: includes/class-pojo-sliding-tab-settings.php:11
-msgid "These are widgets for the Sliding Tab"
+#: includes/class-pojo-slide-tab-settings.php:11
+msgid "These are widgets for the Slide Tab"
 msgstr ""
 
-#: pojo-sliding-tab.php:62 pojo-sliding-tab.php:73
+#: pojo-slide-tab.php:67 pojo-slide-tab.php:78
 msgid "Cheatin&#8217; huh?"
 msgstr ""
 
-#: pojo-sliding-tab.php:87
+#: pojo-slide-tab.php:92
 #, php-format
 msgid ""
 "<a href=\"%s\" target=\"_blank\">Pojo Framework</a> is not active. Please "
-"activate any theme by Pojo before you are using \"Pojo Sliding Tab\" plugin."
+"activate any theme by Pojo before you are using \"Pojo Slide Tab\" plugin."
 msgstr ""

@@ -1,0 +1,31 @@
+/*! pojo-slide-tab - v1.0.0 - 28-06-2015 */
+#pojo-slide-tab {
+  position: fixed;
+  width: 300px;
+  z-index: 9999;
+  bottom: 0;
+  left: 50px;
+  background: #0000ff;
+  color: #fff;
+}
+#pojo-slide-tab .body {
+  position: relative;
+  padding: 20px 0 40px;
+}
+#pojo-slide-tab .toggle {
+  position: absolute;
+  background: #0072b1;
+  left: 0;
+  margin: 0;
+  height: 25px;
+  z-index: 9999;
+}
+#pojo-slide-tab .toggle a {
+  display: block;
+  line-height: 1;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+}

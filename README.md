@@ -1,5 +1,5 @@
-# Pojo Sliding Tab #
-[![Dependency Status](https://david-dm.org/pojome/pojo-sliding-tab/dev-status.svg)](https://david-dm.org/pojome/pojo-sliding-tab#info=devDependencies) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+# Pojo Slide Tab #
+[![Dependency Status](https://david-dm.org/pojome/pojo-slide-tab/dev-status.svg)](https://david-dm.org/pojome/pojo-slide-tab#info=devDependencies) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 **Contributors:** pojo.me, KingYes, ariel.k  
 **Tags:** Import, Importer,  
@@ -34,5 +34,5 @@
 
 ## Changelog ##
 
-### 1.1.0 ###
+### 1.0.0 ###
 * Initial Public Release!

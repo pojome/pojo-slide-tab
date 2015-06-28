@@ -1,12 +1,12 @@
 <?php
 /*
-Plugin Name: Pojo Sliding Tab
+Plugin Name: Pojo Slide Tab
 Plugin URI: http://pojo.me/
 Description: ...
 Author: Pojo Team
 Author URI: http://pojo.me/
 Version: 1.0.0
-Text Domain: pojo-sliding-tab
+Text Domain: pojo-slide-tab
 Domain Path: /languages/
 
 
@@ -26,26 +26,31 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 */
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-final class Pojo_Sliding_Tab {
+define( 'POJO_SLIDE_TAB__FILE__', __FILE__ );
+define( 'POJO_SLIDE_TAB_BASE', plugin_basename( POJO_SLIDE_TAB__FILE__ ) );
+define( 'POJO_SLIDE_TAB_URL', plugins_url( '/', POJO_SLIDE_TAB__FILE__ ) );
+define( 'POJO_SLIDE_TAB_ASSETS_URL', POJO_SLIDE_TAB_URL . 'assets/' );
+
+final class Pojo_Slide_Tab {
 
 	/**
-	 * @var Pojo_Sliding_Tab The one true Pojo_Sliding_Tab
+	 * @var Pojo_Slide_Tab The one true Pojo_Slide_Tab
 	 * @since 1.0.0
 	 */
 	private static $_instance = null;
 
 	/**
-	 * @var Pojo_Sliding_Tab_Settings
+	 * @var Pojo_Slide_Tab_Settings
 	 */
 	public $settings;
 
 	/**
-	 * @var Pojo_Sliding_Tab_Front
+	 * @var Pojo_Slide_Tab_Front
 	 */
 	public $front;
 
 	public function load_textdomain() {
-		load_plugin_textdomain( 'pojo-sliding-tab', false, basename( dirname( __FILE__ ) ) . '/languages' );
+		load_plugin_textdomain( 'pojo-slide-tab', false, basename( dirname( __FILE__ ) ) . '/languages' );
 	}
 
 	/**
@@ -59,7 +64,7 @@ final class Pojo_Sliding_Tab {
 	 */
 	public function __clone() {
 		// Cloning instances of the class is forbidden
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'pojo-sliding-tab' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'pojo-slide-tab' ), '1.0.0' );
 	}
 
 	/**
@@ -70,21 +75,21 @@ final class Pojo_Sliding_Tab {
 	 */
 	public function __wakeup() {
 		// Unserializing instances of the class is forbidden
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'pojo-sliding-tab' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'pojo-slide-tab' ), '1.0.0' );
 	}
 
 	/**
-	 * @return Pojo_Sliding_Tab
+	 * @return Pojo_Slide_Tab
 	 */
 	public static function instance() {
 		if ( is_null( self::$_instance ) )
-			self::$_instance = new Pojo_Sliding_Tab();
+			self::$_instance = new Pojo_Slide_Tab();
 
 		return self::$_instance;
 	}
 
 	public function admin_notices() {
-		echo '<div class="error"><p>' . sprintf( __( '<a href="%s" target="_blank">Pojo Framework</a> is not active. Please activate any theme by Pojo before you are using "Pojo Sliding Tab" plugin.', 'pojo-sliding-tab' ), 'http://pojo.me/' ) . '</p></div>';
+		echo '<div class="error"><p>' . sprintf( __( '<a href="%s" target="_blank">Pojo Framework</a> is not active. Please activate any theme by Pojo before you are using "Pojo Slide Tab" plugin.', 'pojo-slide-tab' ), 'http://pojo.me/' ) . '</p></div>';
 	}
 
 	public function bootstrap() {
@@ -94,11 +99,11 @@ final class Pojo_Sliding_Tab {
 			return;
 		}
 		
-		include( 'includes/class-pojo-sliding-tab-settings.php' );
-		include( 'includes/class-pojo-sliding-tab-front.php' );
+		include( 'includes/class-pojo-slide-tab-settings.php' );
+		include( 'includes/class-pojo-slide-tab-front.php' );
 
-		$this->settings = new Pojo_Sliding_Tab_Settings();
-		$this->front    = new Pojo_Sliding_Tab_Front();
+		$this->settings = new Pojo_Slide_Tab_Settings();
+		$this->front    = new Pojo_Slide_Tab_Front();
 	}
 
 	private function __construct() {
@@ -108,4 +113,4 @@ final class Pojo_Sliding_Tab {
 
 }
 
-Pojo_Sliding_Tab::instance();
+Pojo_Slide_Tab::instance();
