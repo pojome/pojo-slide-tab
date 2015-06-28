@@ -22,13 +22,13 @@
 			var self = this,
 				$elem = self.$element;
 
-			var toggle = $( '.toggle a', '#pojo-slide-tab' ),
+			var toggle = $( '.toggle a', $elem ),
 				_get_container_height = function() {
-					$container = $( '#pojo-slide-tab .body' );
+					$container = $( '.body', $elem );
 
 					return $container.outerHeight() - 25;
 				},
-				$container = $( '#pojo-slide-tab .body' );
+				$container = $( '.body', $elem );
 
 			toggle.on( 'click', function( e ) {
 				e.preventDefault();
